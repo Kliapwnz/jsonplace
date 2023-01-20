@@ -10,11 +10,13 @@ function App() {
         .then(json => console.log(json))
   },[])
 
+const ShowThisHandler=()=>{
 
+}
 
   return (
     <div className="App">
-
+<button onClick={ShowThisHandler}>SHOW ME THIS</button>
     </div>
   );
 }
