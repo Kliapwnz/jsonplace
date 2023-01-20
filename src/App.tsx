@@ -19,7 +19,7 @@ function App() {
     const ShowThisHandler = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then(json => setTodos(json))
     }
 
     return (
