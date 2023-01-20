@@ -42,6 +42,16 @@ function App() {
             </li>
         )
     })
+
+    const addNewTitleHandler =()=>{
+        const newTodo={
+            completed:false,
+            id:todos.length+1,
+            title:newTitle,
+            userId:100200
+        }
+        setTodos([...todos, newTodo])
+    }
     return (
         <div className="App">
             <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
@@ -50,6 +60,7 @@ function App() {
                 setNewTitle={setNewTitle}
                 newTitle={newTitle}
             />
+            <SuperButton name={"Add NEW"} callBack={addNewTitleHandler}/>
             <ul>
                 {mappedTodos}
             </ul>
