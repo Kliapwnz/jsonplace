@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import {SuperButton} from "./components/SuperButton";
+import {SuperInput} from "./components/SuperInput";
 
 type TodosType = {
     completed: boolean
@@ -45,6 +46,10 @@ function App() {
         <div className="App">
             <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
             <SuperButton name={"NE NADO"} callBack={deleteHandler}/>
+            <SuperInput
+                setNewTitle={setNewTitle}
+                newTitle={newTitle}
+            />
             <ul>
                 {mappedTodos}
             </ul>

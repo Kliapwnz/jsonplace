@@ -1,9 +1,14 @@
 import React from 'react';
 
-export const SuperInput = () => {
+type PropsType={
+    setNewTitle:(newTitle:string)=>void
+    newTitle:string
+}
+
+export const SuperInput = (props:PropsType) => {
     return (
         <div>
-            <input onChange={()=>{}}/>
+            <input value={[props.newTitle]} onChange={(e)=>props.setNewTitle(e.currentTarget.value)}/>
         </div>
     );
 };
