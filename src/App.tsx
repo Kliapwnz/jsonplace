@@ -25,8 +25,17 @@ function App() {
     return (
         <div className="App">
             <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
-
-
+            <ul>
+                {todos.map((e) => {
+                    return (
+                        <li key={e.userId}>
+                            <span>{e.id} </span>
+                            <span>{e.title}</span>
+                            <input type="checkbox" checked={e.completed}/>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     );
 }
