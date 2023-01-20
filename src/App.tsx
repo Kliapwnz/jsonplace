@@ -16,6 +16,11 @@ function App() {
 
     const [todos, setTodos] = useState<TodosType[]>([])
 
+    useEffect(()=>{fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(json => setTodos(json))
+    },[])
+
     const ShowThisHandler = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(response => response.json())
