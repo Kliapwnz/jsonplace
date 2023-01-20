@@ -27,6 +27,9 @@ function App() {
             .then(json => setTodos(json))
     }
 
+    const deleteHandler = () => {
+        setTodos([])
+    }
 
     const mappedTodos= todos.map((e) => {
             return (
@@ -39,7 +42,8 @@ function App() {
         })
     return (
         <div className="App">
-            <SuperButton name={"Delete"} callBack={ShowThisHandler}/>
+            <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
+            <SuperButton name={"NE NADO"} callBack={deleteHandler}/>
             <ul>
                 {mappedTodos}
             </ul>
