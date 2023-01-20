@@ -22,19 +22,21 @@ function App() {
             .then(json => setTodos(json))
     }
 
+
+    const mappedTodos= todos.map((e) => {
+            return (
+                <li key={e.userId}>
+                    <span>{e.id} </span>
+                    <span>{e.title}</span>
+                    <input type="checkbox" checked={e.completed}/>
+                </li>
+            )
+        })
     return (
         <div className="App">
             <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
             <ul>
-                {todos.map((e) => {
-                    return (
-                        <li key={e.userId}>
-                            <span>{e.id} </span>
-                            <span>{e.title}</span>
-                            <input type="checkbox" checked={e.completed}/>
-                        </li>
-                    )
-                })}
+                {mappedTodos}
             </ul>
         </div>
     );
