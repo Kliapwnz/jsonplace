@@ -16,30 +16,33 @@ function App() {
 
     const [todos, setTodos] = useState<TodosType[]>([])
 
-    useEffect(()=>{fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => response.json())
-        .then(json => setTodos(json))
-    },[])
-
-    const ShowThisHandler = () => {
+    const myFetch = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
             .then(response => response.json())
             .then(json => setTodos(json))
+    }
+
+    useEffect(() => {
+        myFetch()
+    }, [])
+
+    const ShowThisHandler = () => {
+        myFetch()
     }
 
     const deleteHandler = () => {
         setTodos([])
     }
 
-    const mappedTodos= todos.map((e) => {
-            return (
-                <li key={e.userId}>
-                    <span>{e.id} </span>
-                    <span>{e.title}</span>
-                    <input type="checkbox" checked={e.completed}/>
-                </li>
-            )
-        })
+    const mappedTodos = todos.map((e) => {
+        return (
+            <li key={e.userId}>
+                <span>{e.id} </span>
+                <span>{e.title}</span>
+                <input type="checkbox" checked={e.completed}/>
+            </li>
+        )
+    })
     return (
         <div className="App">
             <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
