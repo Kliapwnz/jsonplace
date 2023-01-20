@@ -39,7 +39,7 @@ function App() {
         })
     return (
         <div className="App">
-            <SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
+            <SuperButton name={"Delete"} callBack={ShowThisHandler}/>
             <ul>
                 {mappedTodos}
             </ul>
