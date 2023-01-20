@@ -13,6 +13,7 @@ type TodosType = {
 function App() {
 
     const [todos, setTodos] = useState<TodosType[]>([])
+    const [newTitle, setNewTitle]= useState("")
 
     const myFetch = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
@@ -27,7 +28,6 @@ function App() {
     const ShowThisHandler = () => {
         myFetch()
     }
-
     const deleteHandler = () => {
         setTodos([])
     }
