@@ -50,7 +50,8 @@ function App() {
             title:newTitle,
             userId:100200
         }
-        setTodos([...todos, newTodo])
+        setTodos([newTodo,...todos])
+        setNewTitle("")
     }
     return (
         <div className="App">
