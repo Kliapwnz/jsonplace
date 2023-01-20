@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 
 import './App.css';
 import {json} from "stream/consumers";
+import {SuperButton} from "./components/SuperButton";
 
 function App() {
 
@@ -19,7 +20,7 @@ const ShowThisHandler=()=>{
 
   return (
     <div className="App">
-<button onClick={ShowThisHandler}>SHOW ME THIS</button>
+<SuperButton name={"Show me This"} callBack={ShowThisHandler}/>
     </div>
   );
 }
